@@ -1,7 +1,8 @@
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-  base: "./",
+  // GitHub Pages project site: https://hplendl.github.io/regarder/
+  base: "/regarder/",
   server: {
     host: "0.0.0.0",
     port: 4317,

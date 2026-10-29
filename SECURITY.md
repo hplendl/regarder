@@ -8,8 +8,9 @@
 
 ## Reporting a vulnerability
 
-Please report security issues privately through the GitHub Security Advisories tab on this
-repository ("Report a vulnerability"). Do not open a public issue for an undisclosed vulnerability.
+Please report security issues privately through
+[GitHub Security Advisories](https://github.com/hplendl/regarder/security/advisories/new). Do not
+open a public issue for an undisclosed vulnerability.
 
 Include what you found, the version, and a way to reproduce it. You should hear back within a week.
 

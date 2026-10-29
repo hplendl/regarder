@@ -7,11 +7,11 @@ Regarder is built with Vite, TypeScript, and the ArcGIS Maps SDK for JavaScript 
 and the Calcite design system provide the map, the layer list, the legend, search, the basemap
 gallery, print, and the feature table. There is no backend. A new deployment is a new config file.
 
-[![Version](https://img.shields.io/badge/version-1.0.0-6e4e2e)](CHANGELOG.md)
-[![License: MIT](https://img.shields.io/badge/license-MIT-1c1915)](LICENSE)
+[![CI](https://github.com/hplendl/regarder/actions/workflows/ci.yml/badge.svg)](https://github.com/hplendl/regarder/actions/workflows/ci.yml)
+[![Version](https://img.shields.io/badge/version-1.0.0-6e4e2e)](https://github.com/hplendl/regarder/releases/tag/v1.0.0)
+[![License: MIT](https://img.shields.io/github/license/hplendl/regarder)](https://github.com/hplendl/regarder/blob/main/LICENSE)
 [![ArcGIS Maps SDK](https://img.shields.io/badge/ArcGIS%20Maps%20SDK-4.34-2f6f4e)](https://developers.arcgis.com/javascript/latest/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178c6)](https://www.typescriptlang.org/)
-[![CI](https://img.shields.io/badge/CI-lint%20·%20typecheck%20·%20test%20·%20build-3d4a3a)](.github/workflows/ci.yml)
+[![Demo](https://img.shields.io/badge/demo-hplendl.github.io%2Fregarder-6e4e2e)](https://hplendl.github.io/regarder/)
 
 ![United States reference, with states, highways, and cities](docs/screenshots/map-layers.png)
 
@@ -50,11 +50,13 @@ npm install
 npm run dev
 ```
 
-Open the URL Vite prints. The dev server uses port **4317**.
+Open the URL Vite prints. The dev server uses port **4317**, and the app is served at
+[http://127.0.0.1:4317/regarder/](http://127.0.0.1:4317/regarder/). The published demo is
+[https://hplendl.github.io/regarder/](https://hplendl.github.io/regarder/).
 
 The app loads configuration in this order:
 
-1. `?config=<id>`, for example `http://127.0.0.1:4317/?config=natural-hazards`
+1. `?config=<id>`, for example `http://127.0.0.1:4317/regarder/?config=natural-hazards`
 2. `public/config.json`, if you have created one (it is gitignored)
 3. The `default` entry in `public/configs/index.json`
 
@@ -324,13 +326,16 @@ npm run build
 npm run preview
 ```
 
-`npm run build` typechecks and writes a static site to `dist/`. `base` is `./`, so the same build
-works at a domain root or in a subpath such as a GitHub Pages project site. Serve `dist/` with any
-static host. No server process and no environment variables are required for the public examples.
+`npm run build` typechecks and writes a static site to `dist/`. The Vite `base` is `/regarder/`,
+which matches the GitHub Pages project site
+[https://hplendl.github.io/regarder/](https://hplendl.github.io/regarder/). Source is
+[https://github.com/hplendl/regarder](https://github.com/hplendl/regarder). No server process and no
+environment variables are required for the public examples.
 
-To publish the demo with GitHub Actions, enable GitHub Pages with **GitHub Actions** as the source.
-`.github/workflows/pages.yml` builds `dist/` on pushes to `main` and on manual runs, and deploys it.
-The live site uses the example configurations, not `public/config.json`.
+To publish the demo, enable GitHub Pages with **GitHub Actions** as the source.
+[`.github/workflows/pages.yml`](https://github.com/hplendl/regarder/blob/main/.github/workflows/pages.yml)
+builds `dist/` on pushes to `main` and on manual runs, and deploys it. The live site uses the
+example configurations, not `public/config.json`.
 
 For a private deployment, build with your own `public/config.json` present, or generate that file in
 CI from a secret store. Do not bake a client secret into the site. An OAuth client ID is visible in

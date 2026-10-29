@@ -5,6 +5,14 @@
   "description": "A reusable, config-driven web map viewer built on the ArcGIS Maps SDK for JavaScript.",
   "license": "MIT",
   "author": "Harry Plendl",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hplendl/regarder.git"
+  },
+  "homepage": "https://hplendl.github.io/regarder/",
+  "bugs": {
+    "url": "https://github.com/hplendl/regarder/issues"
+  },
   "type": "module",
   "engines": {
     "node": ">=20"

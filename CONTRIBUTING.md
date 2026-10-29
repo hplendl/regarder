@@ -3,6 +3,10 @@
 Thanks for helping with Regarder. The project is a static web app: a configuration file in, a map
 viewer out.
 
+- Repository: https://github.com/hplendl/regarder
+- Issues: https://github.com/hplendl/regarder/issues
+- Demo: https://hplendl.github.io/regarder/
+
 ## Development
 
 Requirements: Node.js 20 or newer.
@@ -12,8 +16,8 @@ npm install
 npm run dev
 ```
 
-The dev server listens on port 4317. The United States reference configuration loads unless
-`public/config.json` exists or the URL has `?config=natural-hazards`.
+The dev server listens on port 4317 at http://127.0.0.1:4317/regarder/. The United States reference
+configuration loads unless `public/config.json` exists or the URL has `?config=natural-hazards`.
 
 Before you open a pull request:
 

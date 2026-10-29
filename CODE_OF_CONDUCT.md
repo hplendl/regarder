@@ -29,9 +29,10 @@ Examples of unacceptable behavior:
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be reported privately to the
-repository maintainers through a GitHub security advisory on this repository. Reports will be
-reviewed and investigated promptly and fairly. Maintainers are obligated to respect the privacy of
-the reporter.
+repository maintainers through a
+[GitHub security advisory](https://github.com/hplendl/regarder/security/advisories/new). Reports
+will be reviewed and investigated promptly and fairly. Maintainers are obligated to respect the
+privacy of the reporter.
 
 Project maintainers may remove, edit, or reject comments, commits, code, issues, and other
 contributions that are not aligned with this Code of Conduct, and may ban a contributor for behavior

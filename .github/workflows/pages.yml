@@ -1,5 +1,8 @@
 name: Deploy Regarder demo
 
+# Source: https://github.com/hplendl/regarder
+# Demo: https://hplendl.github.io/regarder/
+
 on:
   workflow_dispatch:
   push:

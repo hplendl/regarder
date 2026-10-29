@@ -1,5 +1,7 @@
 name: Regarder CI
 
+# https://github.com/hplendl/regarder/actions/workflows/ci.yml
+
 on:
   push:
   pull_request:
