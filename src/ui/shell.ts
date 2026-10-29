@@ -102,7 +102,7 @@ export function renderFatal(title: string, details: string[]): void {
   const panel = document.createElement("section");
   panel.className = "fatal";
   const heading = document.createElement("h1");
-  heading.textContent = "Cartouche could not open this configuration";
+  heading.textContent = "Regarder could not open this configuration";
   const lead = document.createElement("p");
   lead.textContent = title;
   const list = document.createElement("ul");

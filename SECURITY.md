@@ -15,7 +15,7 @@ Include what you found, the version, and a way to reproduce it. You should hear 
 
 ## What not to put in the repository
 
-Cartouche is a static site. The browser talks to ArcGIS directly.
+Regarder is a static site. The browser talks to ArcGIS directly.
 
 - Do not commit access tokens, refresh tokens, passwords, client secrets, or SAML certificates.
 - An OAuth client ID is a public identifier, but a client ID registered to a private organization

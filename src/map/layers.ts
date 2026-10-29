@@ -8,7 +8,7 @@ import WebMap from "@arcgis/core/WebMap.js";
 import SimpleMarkerSymbol from "@arcgis/core/symbols/SimpleMarkerSymbol.js";
 import SimpleRenderer from "@arcgis/core/renderers/SimpleRenderer.js";
 import SizeVariable from "@arcgis/core/renderers/visualVariables/SizeVariable.js";
-import type { CartoucheConfig, LayerConfig, PointStyleConfig } from "../config/types.ts";
+import type { RegarderConfig, LayerConfig, PointStyleConfig } from "../config/types.ts";
 import { messageOf } from "../util.ts";
 import { buildPopupTemplate } from "./popup.ts";
 
@@ -23,7 +23,7 @@ export interface QueryableEntry {
 
 export async function addConfiguredLayers(
   map: __esri.Map,
-  config: CartoucheConfig,
+  config: RegarderConfig,
 ): Promise<{ entries: QueryableEntry[]; errors: string[] }> {
   const entries: QueryableEntry[] = [];
   const errors: string[] = [];

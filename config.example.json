@@ -2,8 +2,8 @@
   "title": "Your map title",
   "description": "Replace this file with your layers. Copy it to public/config.json. That path is gitignored.",
   "branding": {
-    "name": "Cartouche",
-    "tagline": "A frame for your map data",
+    "name": "Regarder",
+    "tagline": "To look at",
     "accent": "#6e4e2e"
   },
   "theme": "light",

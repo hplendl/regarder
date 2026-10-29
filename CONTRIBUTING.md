@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping with Cartouche. The project is a static web app: a configuration file in, a map
+Thanks for helping with Regarder. The project is a static web app: a configuration file in, a map
 viewer out.
 
 ## Development

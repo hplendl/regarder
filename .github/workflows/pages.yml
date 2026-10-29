@@ -1,4 +1,4 @@
-name: Deploy demo
+name: Deploy Regarder demo
 
 on:
   workflow_dispatch:

@@ -88,14 +88,14 @@ export interface AuthConfig {
 }
 
 export interface BrandingConfig {
-  /** Wordmark. Defaults to Cartouche. */
+  /** Wordmark. Defaults to Regarder. */
   name?: string;
   tagline?: string;
   /** Hex color used for the accent, such as #6e4e2e. */
   accent?: string;
 }
 
-export interface CartoucheConfig {
+export interface RegarderConfig {
   title: string;
   description?: string;
   branding?: BrandingConfig;

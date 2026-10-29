@@ -1,5 +1,5 @@
 name: Bug report
-description: Something in Cartouche does not behave as the docs describe.
+description: Something in Regarder does not behave as the docs describe.
 title: "bug: "
 labels: ["bug"]
 body:
@@ -24,7 +24,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: Cartouche version
+      label: Regarder version
       placeholder: 1.0.0
     validations:
       required: true

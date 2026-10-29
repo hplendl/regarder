@@ -146,7 +146,7 @@ describe("service extracts", () => {
     });
 
     const body = buildReplicaBody({
-      replicaName: "Cartouche Export!",
+      replicaName: "Regarder Export!",
       layerId: 2,
       format: "filegdb",
       geometry: '{"xmin":-123,"ymin":36,"xmax":-121,"ymax":38}',
@@ -159,7 +159,7 @@ describe("service extracts", () => {
     expect(body.get("async")).toBe("true");
     expect(body.get("syncModel")).toBe("none");
     expect(body.get("layers")).toBe("2");
-    expect(body.get("replicaName")).toBe("CartoucheExport");
+    expect(body.get("replicaName")).toBe("RegarderExport");
     expect(JSON.parse(body.get("layerQueries") ?? "{}")).toEqual({
       "2": { where: "objectid<=3", queryOption: "useFilter", outFields: "type,comments" },
     });

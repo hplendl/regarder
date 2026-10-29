@@ -1,5 +1,5 @@
 {
-  "name": "cartouche",
+  "name": "regarder",
   "version": "1.0.0",
   "private": true,
   "description": "A reusable, config-driven web map viewer built on the ArcGIS Maps SDK for JavaScript.",

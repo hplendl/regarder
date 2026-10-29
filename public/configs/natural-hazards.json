@@ -2,8 +2,8 @@
   "title": "Hazards and observations",
   "description": "Significant earthquakes since 1970, Atlantic hurricane tracks, and recent USGS events. Save the Bay is a sync-enabled sample used for file geodatabase extract.",
   "branding": {
-    "name": "Cartouche",
-    "tagline": "A frame for your map data",
+    "name": "Regarder",
+    "tagline": "To look at",
     "accent": "#7a2e2e"
   },
   "theme": "light",

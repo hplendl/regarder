@@ -155,7 +155,7 @@ function parseSupportedFormats(value: unknown): ReplicaFormat[] {
 
 function sanitizeReplicaName(name: string): string {
   const cleaned = name.replace(/[^A-Za-z0-9]/g, "").slice(0, 28);
-  return cleaned || "CartoucheExport";
+  return cleaned || "RegarderExport";
 }
 
 function errorMessage(error: unknown): string {

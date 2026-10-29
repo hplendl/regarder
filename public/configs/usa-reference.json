@@ -2,8 +2,8 @@
   "title": "United States reference",
   "description": "State outlines, highways, and larger cities from the Esri sample server, with population density tiles and a census map service waiting in the layer list.",
   "branding": {
-    "name": "Cartouche",
-    "tagline": "A frame for your map data",
+    "name": "Regarder",
+    "tagline": "To look at",
     "accent": "#6e4e2e"
   },
   "theme": "light",

@@ -1,5 +1,5 @@
 import { PLACEHOLDER_APP_ID, QUERYABLE_LAYER_TYPES } from "./defaults.ts";
-import type { CartoucheConfig, LayerConfig, ValidationResult } from "./types.ts";
+import type { RegarderConfig, LayerConfig, ValidationResult } from "./types.ts";
 
 const LAYER_TYPES = new Set(["feature", "map-image", "vector-tile", "webmap", "geojson", "csv"]);
 const AUTH_MODES = new Set(["none", "arcgis-oauth", "iwa"]);
@@ -61,12 +61,12 @@ export function validateConfig(input: unknown): ValidationResult {
   return { ok: errors.length === 0, errors, warnings };
 }
 
-export function assertValidConfig(input: unknown): CartoucheConfig {
+export function assertValidConfig(input: unknown): RegarderConfig {
   const result = validateConfig(input);
   if (!result.ok) {
     throw new Error(result.errors.join("\n"));
   }
-  return input as CartoucheConfig;
+  return input as RegarderConfig;
 }
 
 function validateAuth(

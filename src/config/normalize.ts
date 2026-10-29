@@ -4,17 +4,17 @@ import {
   DEFAULT_PRINT_SERVICE_URL,
   QUERYABLE_LAYER_TYPES,
 } from "./defaults.ts";
-import type { BasemapConfig, CartoucheConfig, LayerConfig } from "./types.ts";
+import type { BasemapConfig, RegarderConfig, LayerConfig } from "./types.ts";
 
-export function normalizeConfig(config: CartoucheConfig): CartoucheConfig {
+export function normalizeConfig(config: RegarderConfig): RegarderConfig {
   return {
     ...config,
     theme: config.theme ?? "light",
     portalUrl: stripTrailingSlash(config.portalUrl?.trim() || DEFAULT_PORTAL_URL),
     printServiceUrl: config.printServiceUrl?.trim() || DEFAULT_PRINT_SERVICE_URL,
     branding: {
-      name: config.branding?.name?.trim() || "Cartouche",
-      tagline: config.branding?.tagline?.trim() || "A frame for your map data",
+      name: config.branding?.name?.trim() || "Regarder",
+      tagline: config.branding?.tagline?.trim() || "To look at",
       accent: config.branding?.accent,
     },
     auth: {

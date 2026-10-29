@@ -2,7 +2,7 @@ import esriConfig from "@arcgis/core/config.js";
 import IdentityManager from "@arcgis/core/identity/IdentityManager.js";
 import OAuthInfo from "@arcgis/core/identity/OAuthInfo.js";
 import esriRequest from "@arcgis/core/request.js";
-import type { CartoucheConfig } from "../config/types.ts";
+import type { RegarderConfig } from "../config/types.ts";
 
 export interface SignedInUser {
   username: string;
@@ -12,7 +12,7 @@ export interface SignedInUser {
 const ASSETS_PATH = "https://js.arcgis.com/4.34/@arcgis/core/assets";
 
 export function configureIdentity(
-  config: CartoucheConfig,
+  config: RegarderConfig,
   appId: string | undefined,
   apiKey: string | undefined,
 ): void {

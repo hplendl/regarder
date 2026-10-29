@@ -1,12 +1,11 @@
-# Cartouche
+# Regarder
 
-A reusable frame for a web map. The name comes from the decorative border on an old map that holds
-the title and the legend: one frame, and you drop a different map into it.
+Regarder is French for "to look at." This is a viewer you point at a map configuration and use to
+look at the data: layers, a selection, an export, a print.
 
-Cartouche is a config-driven viewer built with Vite, TypeScript, and the ArcGIS Maps SDK for
-JavaScript 4.34. Map components and the Calcite design system provide the map, the layer list, the
-legend, search, the basemap gallery, print, and the feature table. There is no backend. A new
-deployment is a new config file.
+Regarder is built with Vite, TypeScript, and the ArcGIS Maps SDK for JavaScript 4.34. Map components
+and the Calcite design system provide the map, the layer list, the legend, search, the basemap
+gallery, print, and the feature table. There is no backend. A new deployment is a new config file.
 
 [![Version](https://img.shields.io/badge/version-1.0.0-6e4e2e)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-1c1915)](LICENSE)
@@ -118,7 +117,7 @@ attributes. Omit `exportableFields` to export every attribute.
 | -------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `title`              | yes      | Name shown in the header and the browser tab.                                                                                                                                                                         |
 | `description`        | no       | Sentence under the title and in the About dialog.                                                                                                                                                                     |
-| `branding.name`      | no       | Wordmark. Defaults to Cartouche.                                                                                                                                                                                      |
+| `branding.name`      | no       | Wordmark. Defaults to Regarder.                                                                                                                                                                                       |
 | `branding.tagline`   | no       | Line under the wordmark.                                                                                                                                                                                              |
 | `branding.accent`    | no       | Hex color, such as `#6e4e2e`.                                                                                                                                                                                         |
 | `theme`              | no       | `light` (default) or `dark`.                                                                                                                                                                                          |
@@ -188,7 +187,7 @@ Use `webMapItemId` when the web map should be the whole map.
 
 ArcGIS Online and ArcGIS Enterprise do not need a SAML library in this app. The portal is the OAuth
 authorization server. If the organization has a SAML identity provider, the portal login sends the
-user to that provider. Cartouche only starts the portal's OAuth 2.0 flow (`OAuthInfo` +
+user to that provider. Regarder only starts the portal's OAuth 2.0 flow (`OAuthInfo` +
 `IdentityManager`, authorization code with PKCE). The app never sees the SAML assertion. It receives
 an ArcGIS token.
 
@@ -217,11 +216,11 @@ The header shows **Sign in** or **Sign out**, and the signed-in name from the po
 1. Sign in as someone who can create content.
 2. Go to **Content → New item → Developer credentials**.
 3. Choose **OAuth 2.0 credentials** for user authentication. Do not create an API key for this step,
-   and do not generate a client secret. Cartouche is a public browser client and uses PKCE.
+   and do not generate a client secret. Regarder is a public browser client and uses PKCE.
 4. Add redirect URLs, exactly, including the slash and the host:
-   - Production app: `https://maps.example.com/cartouche/` and
-     `https://maps.example.com/cartouche/index.html`
-   - Popup callback: `https://maps.example.com/cartouche/oauth-callback.html`
+   - Production app: `https://maps.example.com/regarder/` and
+     `https://maps.example.com/regarder/index.html`
+   - Popup callback: `https://maps.example.com/regarder/oauth-callback.html`
    - Local dev: `http://localhost:4317/` and `http://localhost:4317/oauth-callback.html`
    - If you open the site as `127.0.0.1`, register that host too. Browsers treat it as a different
      origin from `localhost`.
@@ -230,10 +229,10 @@ The header shows **Sign in** or **Sign out**, and the signed-in name from the po
 6. If requests from the app origin are blocked, add that origin under **Organization → Settings →
    Security → Allow origins**.
 
-SAML itself is configured on the organization, not in Cartouche: **Organization → Settings →
-Security → Logins → Set up a SAML login**. After that, **Sign in** opens the portal. The portal
-shows its sign-in page, including the enterprise account button, or it redirects straight to the
-identity provider when that is the only login.
+SAML itself is configured on the organization, not in Regarder: **Organization → Settings → Security
+→ Logins → Set up a SAML login**. After that, **Sign in** opens the portal. The portal shows its
+sign-in page, including the enterprise account button, or it redirects straight to the identity
+provider when that is the only login.
 
 ### Register the app on ArcGIS Enterprise
 
@@ -362,7 +361,7 @@ src/auth/           OAuth and IWA
 
 ## Third-party notices
 
-Cartouche's source is MIT, copyright Harry Plendl. See [LICENSE](LICENSE).
+Regarder's source is MIT, copyright Harry Plendl. See [LICENSE](LICENSE).
 
 The ArcGIS Maps SDK for JavaScript, Calcite components, and the sample services are Esri products.
 Using them is covered by Esri's terms, not by the MIT license on this repository. The basemap tiles

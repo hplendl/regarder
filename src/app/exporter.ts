@@ -108,7 +108,7 @@ export async function runExport(options: {
   const where = replicaWhere(options);
   const outFields = fields ? unique([...(fields ?? []), options.layer.objectIdField]) : undefined;
   const result = await requestReplica(parts.root, {
-    replicaName: `Cartouche${Date.now().toString(36)}`,
+    replicaName: `Regarder${Date.now().toString(36)}`,
     layerId: parts.layerId,
     format: options.format,
     geometry: geometry.geometry,

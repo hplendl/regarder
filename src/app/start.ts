@@ -22,7 +22,7 @@ import { APP_VERSION } from "../config/defaults.ts";
 import { loadExampleCatalog, resolveConfigDocument } from "../config/load.ts";
 import { normalizeConfig } from "../config/normalize.ts";
 import { resolveApiKey, resolveAppId } from "../config/secrets.ts";
-import type { CartoucheConfig } from "../config/types.ts";
+import type { RegarderConfig } from "../config/types.ts";
 import { validateConfig } from "../config/validate.ts";
 import { createBasemap, createBasemapSource } from "../map/basemaps.ts";
 import "../map/elements.ts";
@@ -58,16 +58,16 @@ export async function start(): Promise<void> {
     return;
   }
 
-  const config = normalizeConfig(documentJson as CartoucheConfig);
+  const config = normalizeConfig(documentJson as RegarderConfig);
   const catalog = await loadExampleCatalog().catch(() => undefined);
   const requested = new URLSearchParams(window.location.search).get("config") ?? catalog?.default;
-  document.title = `${config.title} · ${config.branding?.name ?? "Cartouche"}`;
+  document.title = `${config.title} · ${config.branding?.name ?? "Regarder"}`;
   document.body.classList.add(config.theme === "dark" ? "calcite-mode-dark" : "calcite-mode-light");
 
   const shell = renderShell();
   shell.root.dataset.theme = config.theme ?? "light";
   applyAccent(shell.root, config.branding?.accent);
-  shell.brandName.textContent = config.branding?.name ?? "Cartouche";
+  shell.brandName.textContent = config.branding?.name ?? "Regarder";
   shell.brandTagline.textContent = config.branding?.tagline ?? "";
   shell.title.textContent = config.title;
   shell.description.textContent = config.description ?? "";
@@ -284,7 +284,7 @@ export async function start(): Promise<void> {
 
 function wireSearch(
   search: ArcgisSearch,
-  config: CartoucheConfig,
+  config: RegarderConfig,
   queryable: QueryableEntry[],
 ): void {
   const sources = config.search?.layerSources ?? [];
@@ -465,7 +465,7 @@ function wireExport(
 
 function renderAccount(
   host: HTMLElement,
-  config: CartoucheConfig,
+  config: RegarderConfig,
   appId: string | undefined,
   user: SignedInUser | undefined,
 ): void {
@@ -522,7 +522,7 @@ function renderAccount(
 
 function wireAbout(
   shell: ReturnType<typeof renderShell>,
-  config: CartoucheConfig,
+  config: RegarderConfig,
   user: SignedInUser | undefined,
 ): void {
   const aboutButton = document.querySelector("#about-button");
@@ -530,10 +530,10 @@ function wireAbout(
     shell.aboutBody.replaceChildren();
     const paragraphs = [
       config.description ||
-        "Cartouche loads its map, layers, and tools from a single configuration file.",
+        "Regarder loads its map, layers, and tools from a single configuration file.",
       `${config.layers.length} configured layers. Portal ${config.portalUrl}. Authentication ${config.auth?.mode ?? "none"}.`,
       user ? `Signed in as ${user.fullName || user.username}.` : "No named user is signed in.",
-      `Cartouche ${APP_VERSION}, ArcGIS Maps SDK for JavaScript 4.34.`,
+      `Regarder ${APP_VERSION}, ArcGIS Maps SDK for JavaScript 4.34.`,
     ];
     for (const text of paragraphs) {
       const paragraph = document.createElement("p");
