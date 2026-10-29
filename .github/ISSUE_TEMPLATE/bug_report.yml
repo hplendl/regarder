@@ -1,0 +1,44 @@
+name: Bug report
+description: Something in Cartouche does not behave as the docs describe.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include the relevant part of your config with secrets and private URLs removed.
+      placeholder: |
+        1. npm run dev
+        2. Open the United States reference example
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Cartouche version
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Configuration
+        - Map and layers
+        - Sign-in
+        - Selection
+        - Export
+        - Print
+        - Layout
+    validations:
+      required: true

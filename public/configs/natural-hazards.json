@@ -1,0 +1,137 @@
+{
+  "title": "Hazards and observations",
+  "description": "Significant earthquakes since 1970, Atlantic hurricane tracks, and recent USGS events. Save the Bay is a sync-enabled sample used for file geodatabase extract.",
+  "branding": {
+    "name": "Cartouche",
+    "tagline": "A frame for your map data",
+    "accent": "#7a2e2e"
+  },
+  "theme": "light",
+  "portalUrl": "https://www.arcgis.com",
+  "auth": { "mode": "none" },
+  "basemap": {
+    "title": "Light gray",
+    "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer"
+  },
+  "center": [-40, 20],
+  "zoom": 2,
+  "search": {
+    "enabled": true,
+    "includeDefaultSources": false,
+    "placeholder": "Search hazards",
+    "layerSources": [
+      {
+        "layerId": "earthquakes",
+        "searchFields": ["name"],
+        "displayField": "name",
+        "placeholder": "Find a historic earthquake"
+      }
+    ]
+  },
+  "ui": { "exampleSwitcher": true },
+  "layers": [
+    {
+      "id": "hurricane-tracks",
+      "title": "Atlantic hurricane tracks",
+      "type": "feature",
+      "url": "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer/1",
+      "visible": true,
+      "selectable": true,
+      "popupFields": [
+        { "field": "NAME", "label": "Storm" },
+        { "field": "YEAR", "label": "Year" },
+        { "field": "WIND_KTS", "label": "Wind (knots)", "format": "number" },
+        { "field": "CAT", "label": "Category" },
+        { "field": "BASIN", "label": "Basin" }
+      ],
+      "exportableFields": ["NAME", "YEAR", "MONTH", "DAY", "WIND_KTS", "CAT", "BASIN"]
+    },
+    {
+      "id": "earthquakes",
+      "title": "Earthquakes since 1970",
+      "type": "feature",
+      "url": "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Earthquakes_Since1970/MapServer/0",
+      "visible": true,
+      "selectable": true,
+      "popupFields": [
+        { "field": "name", "label": "Name" },
+        { "field": "year_", "label": "Year", "format": "number" },
+        { "field": "magnitude", "label": "Magnitude", "format": "number-2" },
+        { "field": "num_deaths", "label": "Deaths", "format": "number" }
+      ],
+      "exportableFields": ["name", "year_", "magnitude", "num_deaths", "latitude", "longitude"]
+    },
+    {
+      "id": "recent-quakes",
+      "title": "USGS magnitude 4.5+ (past week)",
+      "type": "geojson",
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson",
+      "visible": true,
+      "selectable": true,
+      "copyright": "U.S. Geological Survey",
+      "pointStyle": {
+        "color": "#b03a2e",
+        "outlineColor": "#fffaf3",
+        "sizeField": "mag",
+        "minDataValue": 4.5,
+        "maxDataValue": 8,
+        "minSize": 5,
+        "maxSize": 26
+      },
+      "popupFields": [
+        { "field": "place", "label": "Place" },
+        { "field": "mag", "label": "Magnitude", "format": "number-2" },
+        { "field": "time", "label": "Time (epoch ms)" },
+        { "field": "alert", "label": "Alert" },
+        { "field": "type", "label": "Type" }
+      ],
+      "exportableFields": ["mag", "place", "time", "alert", "tsunami", "type", "url"]
+    },
+    {
+      "id": "field-sites",
+      "title": "Sample field sites",
+      "type": "csv",
+      "url": "./data/field-sites.csv",
+      "latitudeField": "latitude",
+      "longitudeField": "longitude",
+      "visible": true,
+      "selectable": true,
+      "pointStyle": { "color": "#2d5a45", "size": 11, "outlineColor": "#f4efe6" },
+      "popupFields": [
+        { "field": "name", "label": "Site" },
+        { "field": "kind", "label": "Kind" },
+        { "field": "notes", "label": "Notes" }
+      ],
+      "exportableFields": ["name", "kind", "latitude", "longitude", "notes"]
+    },
+    {
+      "id": "save-the-bay",
+      "title": "Save the Bay areas",
+      "type": "feature",
+      "url": "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Sync/SaveTheBaySync/FeatureServer/2",
+      "visible": false,
+      "selectable": true,
+      "popupFields": [
+        { "field": "type", "label": "Type" },
+        { "field": "confirmed", "label": "Confirmed" },
+        { "field": "comments", "label": "Comments" }
+      ],
+      "exportableFields": ["type", "confirmed", "comments"]
+    },
+    {
+      "id": "power-plants",
+      "title": "Global power plants",
+      "type": "webmap",
+      "itemId": "02b37471d5d84cacbebcccd785460e94",
+      "visible": false,
+      "selectable": true,
+      "popupFields": [
+        { "field": "name", "label": "Plant" },
+        { "field": "country_long", "label": "Country" },
+        { "field": "primary_fuel", "label": "Fuel" },
+        { "field": "capacity_mw", "label": "Capacity (MW)", "format": "number-2" }
+      ],
+      "exportableFields": ["name", "country_long", "primary_fuel", "capacity_mw"]
+    }
+  ]
+}

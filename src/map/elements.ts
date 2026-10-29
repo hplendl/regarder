@@ -1,0 +1,26 @@
+import "@arcgis/map-components/components/arcgis-map";
+import "@arcgis/map-components/components/arcgis-zoom";
+import "@arcgis/map-components/components/arcgis-home";
+import "@arcgis/map-components/components/arcgis-search";
+import "@arcgis/map-components/components/arcgis-scale-bar";
+import "@arcgis/map-components/components/arcgis-legend";
+import "@arcgis/map-components/components/arcgis-layer-list";
+import "@arcgis/map-components/components/arcgis-basemap-gallery";
+import "@arcgis/map-components/components/arcgis-print";
+import "@arcgis/map-components/components/arcgis-feature-table";
+
+import "@esri/calcite-components/components/calcite-button";
+import "@esri/calcite-components/components/calcite-dialog";
+import "@esri/calcite-components/components/calcite-input";
+import "@esri/calcite-components/components/calcite-label";
+import "@esri/calcite-components/components/calcite-loader";
+import "@esri/calcite-components/components/calcite-notice";
+import "@esri/calcite-components/components/calcite-option";
+import "@esri/calcite-components/components/calcite-select";
+import "@esri/calcite-components/components/calcite-segmented-control";
+import "@esri/calcite-components/components/calcite-segmented-control-item";
+import "@esri/calcite-components/components/calcite-switch";
+import "@esri/calcite-components/components/calcite-tab";
+import "@esri/calcite-components/components/calcite-tab-nav";
+import "@esri/calcite-components/components/calcite-tab-title";
+import "@esri/calcite-components/components/calcite-tabs";

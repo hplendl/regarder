@@ -1,0 +1,21 @@
+name: Feature request
+description: A capability that still belongs in a reusable map frame.
+title: "feat: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What deployment task is awkward or impossible today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description:
+        How should the config or the viewer behave? Mention if it can stay in the config file with
+        no backend.
+    validations:
+      required: true

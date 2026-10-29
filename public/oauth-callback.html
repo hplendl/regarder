@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Signing in to Cartouche</title>
+  </head>
+  <body>
+    <p>Signing you in. This window closes on its own.</p>
+    <script>
+      (function () {
+        var opener = window.opener;
+        if (!opener) return;
+        var CustomEvent = opener.CustomEvent;
+        if (window.location.hash) {
+          opener.dispatchEvent(
+            new CustomEvent("arcgis:auth:hash", { detail: window.location.hash }),
+          );
+        }
+        if (window.location.search) {
+          opener.dispatchEvent(
+            new CustomEvent("arcgis:auth:location:search", { detail: window.location.search }),
+          );
+        }
+        window.close();
+      })();
+    </script>
+  </body>
+</html>

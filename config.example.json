@@ -1,0 +1,100 @@
+{
+  "title": "Your map title",
+  "description": "Replace this file with your layers. Copy it to public/config.json. That path is gitignored.",
+  "branding": {
+    "name": "Cartouche",
+    "tagline": "A frame for your map data",
+    "accent": "#6e4e2e"
+  },
+  "theme": "light",
+  "portalUrl": "https://www.arcgis.com",
+  "auth": {
+    "mode": "arcgis-oauth",
+    "appId": "YOUR_CLIENT_ID",
+    "popup": true,
+    "expiration": 480,
+    "trustedServers": ["https://gis.example.com"]
+  },
+  "basemap": {
+    "title": "Topographic",
+    "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer"
+  },
+  "basemapGallery": [
+    {
+      "title": "Topographic",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer"
+    },
+    {
+      "title": "Imagery",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"
+    }
+  ],
+  "extent": { "xmin": -128, "ymin": 23, "xmax": -65, "ymax": 51, "wkid": 4326 },
+  "center": [-98, 39],
+  "zoom": 4,
+  "printServiceUrl": "https://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task",
+  "search": {
+    "enabled": true,
+    "includeDefaultSources": false,
+    "placeholder": "Search layers",
+    "layerSources": [
+      {
+        "layerId": "states",
+        "searchFields": ["state_name"],
+        "displayField": "state_name",
+        "placeholder": "Find a state"
+      }
+    ]
+  },
+  "ui": { "exampleSwitcher": false },
+  "layers": [
+    {
+      "id": "states",
+      "title": "States",
+      "type": "feature",
+      "url": "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2",
+      "visible": true,
+      "opacity": 1,
+      "selectable": true,
+      "definitionExpression": "",
+      "popupFields": [
+        { "field": "state_name", "label": "State" },
+        { "field": "pop2000", "label": "Population", "format": "number" }
+      ],
+      "exportableFields": ["state_name", "state_abbr", "pop2000"]
+    },
+    {
+      "id": "census",
+      "title": "Census map",
+      "type": "map-image",
+      "url": "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer",
+      "visible": false,
+      "sublayers": [{ "id": 3, "title": "States", "visible": true }]
+    },
+    {
+      "id": "density",
+      "title": "Population density",
+      "type": "vector-tile",
+      "url": "https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Pop_Density/VectorTileServer",
+      "visible": false,
+      "selectable": false
+    },
+    {
+      "id": "sites",
+      "title": "Field sites",
+      "type": "csv",
+      "url": "./data/field-sites.csv",
+      "latitudeField": "latitude",
+      "longitudeField": "longitude",
+      "visible": false,
+      "pointStyle": { "color": "#2d5a45", "size": 10 }
+    },
+    {
+      "id": "power-plants",
+      "title": "Global power plants",
+      "type": "webmap",
+      "itemId": "02b37471d5d84cacbebcccd785460e94",
+      "visible": false
+    }
+  ]
+}

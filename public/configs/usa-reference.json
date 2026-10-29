@@ -1,0 +1,123 @@
+{
+  "title": "United States reference",
+  "description": "State outlines, highways, and larger cities from the Esri sample server, with population density tiles and a census map service waiting in the layer list.",
+  "branding": {
+    "name": "Cartouche",
+    "tagline": "A frame for your map data",
+    "accent": "#6e4e2e"
+  },
+  "theme": "light",
+  "portalUrl": "https://www.arcgis.com",
+  "auth": { "mode": "none" },
+  "basemap": {
+    "title": "Topographic",
+    "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer"
+  },
+  "extent": { "xmin": -128, "ymin": 23, "xmax": -65, "ymax": 51, "wkid": 4326 },
+  "search": {
+    "enabled": true,
+    "includeDefaultSources": false,
+    "placeholder": "Search the reference layers",
+    "layerSources": [
+      {
+        "layerId": "states",
+        "searchFields": ["state_name", "state_abbr"],
+        "displayField": "state_name",
+        "placeholder": "Find a state"
+      },
+      {
+        "layerId": "cities",
+        "searchFields": ["areaname", "st"],
+        "displayField": "areaname",
+        "placeholder": "Find a city"
+      }
+    ]
+  },
+  "ui": { "exampleSwitcher": true },
+  "layers": [
+    {
+      "id": "states",
+      "title": "States",
+      "type": "feature",
+      "url": "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2",
+      "visible": true,
+      "selectable": true,
+      "popupFields": [
+        { "field": "state_name", "label": "State" },
+        { "field": "state_abbr", "label": "Abbreviation" },
+        { "field": "sub_region", "label": "Region" },
+        { "field": "pop2000", "label": "Population, 2000", "format": "number" },
+        { "field": "pop00_sqmi", "label": "People per square mile", "format": "number" }
+      ],
+      "exportableFields": ["state_name", "state_abbr", "sub_region", "pop2000", "pop00_sqmi"]
+    },
+    {
+      "id": "highways",
+      "title": "Highways",
+      "type": "feature",
+      "url": "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/1",
+      "visible": true,
+      "selectable": true,
+      "popupFields": [
+        { "field": "route", "label": "Route" },
+        { "field": "type", "label": "Type" },
+        { "field": "admn_class", "label": "Class" },
+        { "field": "toll_rd", "label": "Toll road" }
+      ],
+      "exportableFields": ["route", "type", "admn_class", "toll_rd", "rte_num1"]
+    },
+    {
+      "id": "cities",
+      "title": "Cities over 100,000",
+      "type": "feature",
+      "url": "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/0",
+      "visible": true,
+      "selectable": true,
+      "definitionExpression": "pop2000 > 100000",
+      "popupFields": [
+        { "field": "areaname", "label": "City" },
+        { "field": "st", "label": "State" },
+        { "field": "capital", "label": "Capital" },
+        { "field": "pop2000", "label": "Population, 2000", "format": "number" }
+      ],
+      "exportableFields": ["areaname", "st", "capital", "pop2000"]
+    },
+    {
+      "id": "counties",
+      "title": "Counties",
+      "type": "feature",
+      "url": "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/3",
+      "visible": false,
+      "selectable": true,
+      "popupFields": [
+        { "field": "name", "label": "County" },
+        { "field": "state_name", "label": "State" },
+        { "field": "pop2000", "label": "Population, 2000", "format": "number" }
+      ],
+      "exportableFields": ["name", "state_name", "pop2000", "pop00_sqmi"]
+    },
+    {
+      "id": "population-density",
+      "title": "Population density tiles",
+      "type": "vector-tile",
+      "url": "https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Pop_Density/VectorTileServer",
+      "visible": false,
+      "opacity": 0.72,
+      "selectable": false
+    },
+    {
+      "id": "census",
+      "title": "Census map service",
+      "type": "map-image",
+      "url": "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer",
+      "visible": false,
+      "opacity": 0.85,
+      "sublayers": [
+        { "id": 3, "title": "States", "visible": true },
+        { "id": 2, "title": "Detailed counties", "visible": false },
+        { "id": 1, "title": "Block groups", "visible": false },
+        { "id": 0, "title": "Block points", "visible": false }
+      ]
+    }
+  ]
+}

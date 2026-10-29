@@ -1,0 +1,7 @@
+{
+  "default": "usa-reference",
+  "examples": [
+    { "id": "usa-reference", "title": "United States reference" },
+    { "id": "natural-hazards", "title": "Hazards and observations" }
+  ]
+}
